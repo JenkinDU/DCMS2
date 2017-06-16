@@ -1,0 +1,15 @@
+module dcms {
+	struct Result {
+		boolean success;
+		string content;
+	};
+	
+	interface DCMS {
+		Result transferReservation(in long passengerID, in string current, in string other);
+  		string getCount(in string recordType);
+  		Result editRecord(in long recordID, in string fieldName, in string newValue);
+  		Result book(in string firstName, in string lastName, in string address, 
+							in string phone, in string des, in string date, in string tClass);
+		string getAllInfo();
+  	};
+};
